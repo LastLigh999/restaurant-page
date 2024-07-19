@@ -26,20 +26,47 @@ body {
 .contentBody > div {
 	background-color: rgba(0, 0, 0, 0.5);
 	flex: 1;
+	padding: 10px 0;
 	width: 100%;
-	color: white;
-}
-.contact {
-	color: white;
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	/* justify-content: center; */
 	align-items: center;
+	padding: 0px auto;
+	color: white;
 }
+
+/* About */
+.about {
+	display: flex;
+	flex-direction: column;
+	align-items: top;
+	justify-content: center;
+	width: fit-content;
+}
+.offers {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* align-items: start; */
+	gap: 10px;
+}
+
+.offers > li {
+	padding: 5px 10px;
+	border-radius: 5px;
+	font-size: 30px;
+	/* text-shadow: 4px 4px 10px blue; */
+	cursor: pointer;
+}
+
+/* Menu Styling */
 .menu > div {
+	width: 100%;
 	padding: 40px;
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(350px, 450px));
 	gap: 30px;
 	justify-content: center;
 }
@@ -48,9 +75,19 @@ body {
 	flex-direction: column;
 	align-items: center;
 	border: 1px solid blue;
+	/* max-width: 450px; */
 }
 .menucard:hover {
 	box-shadow: 5px 5px 10px blue;
+}
+
+/* Contact styling */
+.contact {
+	color: white;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	align-items: center;
 }
 
 .contactcard {
@@ -75,6 +112,7 @@ body {
 	border-radius: 20px;
 }
 
+/* Header Footer */
 header,
 footer {
 	display: flex;
@@ -96,7 +134,7 @@ header > div > img {
 	pointer-events: none;
 	user-select: none;
 }
-ul {
+#buttons {
 	margin: 0px;
 	padding: 0px;
 	list-style-type: none;
@@ -107,7 +145,7 @@ ul {
 	font-size: 35px;
 	padding: 0px 10px;
 }
-ul li {
+#buttons li {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -118,6 +156,7 @@ ul li {
 	flex: 1;
 	height: 60px;
 	cursor: default;
+	border-radius: 0px 0px 20px 20px;
 }
 ul li:hover {
 	z-index: 1;
