@@ -71,6 +71,8 @@ function menuItemCard(object, name) {
 	text.appendChild(document.createTextNode(`${copytext}`));
 	let price = document.createElement("p");
 	price.textContent = object.price;
+	price.style.color = "#c5e90b";
+	price.style.textShadow = "5px 5px 1px #26580f";
 
 	text_items.appendChild(text);
 	text_items.appendChild(price);

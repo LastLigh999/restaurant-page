@@ -24,6 +24,10 @@ header > div {
 	flex-direction: column;
 	background-color: #444;
 }
+.contentBody {
+	padding: 0px;
+	margin: 0px;
+}
 .contentBody > div {
 	display: flex;
 	flex-direction: column;
@@ -31,6 +35,7 @@ header > div {
 	height: auto;
 	flex: 1;
 	padding: 10px 20px 20px;
+	margin: 0px;
 }
 .contentBody > div > h1 {
 	font-size: 4rem;
@@ -58,10 +63,14 @@ header > div {
 	align-items: center;
 	justify-content: center;
 	width: fit-content;
+	margin: 0px; /* 
+	padding: 0px; */
 }
 .paragraphContainer {
 	background-color: rgba(0, 0, 0, 0.6);
 	z-index: 1;
+	padding: 0px;
+	margin: 0px;
 }
 .about p {
 	max-width: 900px;
@@ -130,7 +139,8 @@ header > div {
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	padding: 5px;
+	padding: 0px;
+	margin: 0px;
 }
 .aboutContent > h1 {
 	text-shadow: 5px 5px 10px red, -5px -5px 10px red;
@@ -170,7 +180,10 @@ header > div {
 		margin: 0px;
 	}
 	.aboutContent > div {
-		font-size: 24px;
+		font-size: 20px;
+	}
+	.contentBody > div > div {
+		padding: 0px 5px;
 	}
 }
 
@@ -222,13 +235,14 @@ header > div {
 	transform-origin: top;
 	background-color: black;
 	height: 60px;
-	z-index: 1;
+	z-index: 2;
 	transform: scaleY(0);
 	transition: transform 0.2s;
 }
 .menucard.active .ingredients {
 	border: 1px solid violet;
 	border-top: none;
+	z-index: 2;
 	box-shadow: 5px 5px 6px violet;
 	transform: scaleY(1);
 }
