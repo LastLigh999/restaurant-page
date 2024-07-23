@@ -94,6 +94,21 @@ function whatWeoffer() {
 	return container;
 }
 
+function aboutInfoParagraph(text) {
+	let tempele = document.createElement("p");
+	tempele.innerHTML = text;
+	return tempele;
+}
+
+function paragraphContainer(texts) {
+	let tempele = document.createElement("div");
+	tempele.classList.add("paragraphContainer");
+	for (let text of texts) {
+		tempele.appendChild(aboutInfoParagraph(text));
+	}
+	return tempele;
+}
+
 function about() {
 	let element = document.createElement("div");
 	let tempele = document.createElement("div");
@@ -104,9 +119,24 @@ function about() {
 		clearInterval(intervalId);
 	}
 	innerElement.classList.add("about");
-	innerElement.innerHTML = `<h2>Family Dinner, Traditional kitchen. We offer food made by experienced chefs.</h2>`;
+	innerElement.innerHTML = `<h2>Bistro RocketAelly.</h2>
+	`;
+
+	innerElement.appendChild(
+		paragraphContainer([
+			"Welcome to Bistro RocketAlley, a cornerstone of culinary excellence nestled in the heart of [City]. Founded on [Founding Date], our establishment has been a beacon of warmth and hospitality for over a decade. From the day we opened our doors, we've had the pleasure of serving countless guests, each leaving with a memorable dining experience.",
+			"Our journey began with a simple yet profound vision: to create a place where people could come together to enjoy exceptional food in a welcoming and vibrant atmosphere. We believe that dining is not just about the food on the plate but also about the experience, the ambiance, and the connections made around the table. This philosophy has guided us since our inception and continues to be the cornerstone of our success.",
+		])
+	);
 
 	innerElement.appendChild(imageGallery());
+
+	innerElement.appendChild(
+		paragraphContainer([
+			"As we look to the future, we remain committed to upholding the high standards that have defined Bistro RocketAlley from the beginning. We are continually evolving, seeking new ways to enhance our menu, improve our service, and provide an exceptional dining experience.",
+			"As we look to the future, we remain committed to upholding the high standards that have defined Bistro RocketAlley from the beginning. We are continually evolving, seeking new ways to enhance our menu, improve our service, and provide an exceptional dining experience.",
+		])
+	);
 
 	innerElement.appendChild(whatWeoffer());
 

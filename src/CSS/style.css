@@ -24,7 +24,7 @@ header > div {
 	flex-direction: column;
 	background-color: #444;
 }
-.contentBody {
+.contentBody > div {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -32,14 +32,14 @@ header > div {
 	flex: 1;
 	padding: 10px 20px 20px;
 }
-.contentBody > h1 {
+.contentBody > div > h1 {
 	font-size: 4rem;
 	font-family: "Lobster", sans-serif;
 	margin: 0px;
 	text-shadow: 0px 5px 1px blue, 5px 0px 1px violet, -5px 0px 1px orange,
 		0px -5px 1px red;
 }
-.contentBody > div {
+.contentBody > div > div {
 	background-color: rgba(0, 0, 0, 0.5);
 	flex: 1;
 	width: calc(100% - 15px);
@@ -59,6 +59,21 @@ header > div {
 	justify-content: center;
 	width: fit-content;
 }
+.paragraphContainer {
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 1;
+}
+.about p {
+	max-width: 900px;
+	font-size: 30px;
+	text-shadow: 1px 1px 1px blue;
+	padding: 0px 20px;
+}
+.about h2 {
+	font-size: 50px;
+	margin-bottom: 0px;
+}
+
 .offers {
 	list-style: none;
 	display: flex;
@@ -79,6 +94,7 @@ header > div {
 .imageGal {
 	display: flex;
 	width: fit-content;
+	position: relative;
 	background-color: black;
 	transform-origin: top;
 	margin: 0px 40px;
@@ -87,6 +103,7 @@ header > div {
 	border-radius: 10px;
 	transform: scaleY(1, 1);
 	transition: transform 0.8s;
+	z-index: 2;
 }
 .imageGal.transitioning {
 	transition: transform 0.3s;
@@ -171,13 +188,49 @@ header > div {
 }
 .menucard {
 	display: flex;
+	pointer-events: all;
 	flex-direction: column;
 	align-items: center;
 	border: 1px solid blue;
+	position: relative;
+	background-color: black;
 	/* max-width: 450px; */
 }
 .menucard:hover {
 	box-shadow: 5px 5px 10px blue;
+}
+.menucard.active {
+	box-shadow: 5px 5px 6px violet;
+	border: 1px solid violet;
+}
+.menucard.active:hover {
+	box-shadow: 5px 5px 6px violet;
+}
+
+.menucard > div {
+	display: flex;
+	justify-content: space-between;
+	width: calc(100% - 40px);
+	padding: 0px 20px;
+}
+
+.ingredients {
+	position: absolute;
+	top: 99%;
+	border: 1px solid blue;
+	border-top: none;
+	transform-origin: top;
+	background-color: black;
+	height: 60px;
+	z-index: 1;
+	transform: scaleY(0);
+	transition: transform 0.2s;
+}
+.menucard.active .ingredients {
+	border: 1px solid violet;
+	border-top: none;
+	box-shadow: 5px 5px 6px violet;
+	transform: scaleY(1);
 }
 
 /* Contact styling */
