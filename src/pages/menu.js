@@ -13,7 +13,7 @@ function menuItemCard(image, name) {
 	let img = new Image();
 	img.src = image;
 	img.style.height = "250px";
-	img.style.width = "350px";
+	img.style.width = "clamp(300px,100%, 450px)";
 
 	tempele.appendChild(img);
 

@@ -1,11 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700&display=swap");
+
 html,
 body {
 	padding: 0px;
 	margin: 0px;
 	height: 100%;
 	background-color: black;
-	font-family: sans-serif;
+	/* font-family: "Caveat", cursive; */
+	font-family: "Yanone Kaffeesatz", sans-serif;
+	font-size: 1.15rem;
 }
+
+header > div {
+	font-family: "Ga Maamli", sans-serif;
+	font-size: 60px;
+}
+
 #content {
 	display: flex;
 	flex-direction: column;
@@ -21,18 +34,20 @@ body {
 }
 .contentBody > h1 {
 	font-size: 4rem;
+	font-family: "Lobster", sans-serif;
 	margin: 0px;
+	text-shadow: 0px 5px 1px blue, 5px 0px 1px violet, -5px 0px 1px orange,
+		0px -5px 1px red;
 }
 .contentBody > div {
 	background-color: rgba(0, 0, 0, 0.5);
 	flex: 1;
-	padding: 10px 0;
-	width: 100%;
+	width: calc(100% - 15px);
 	display: flex;
 	flex-direction: column;
 	/* justify-content: center; */
 	align-items: center;
-	padding: 0px auto;
+	padding: 0px 15px;
 	color: white;
 }
 
@@ -40,7 +55,7 @@ body {
 .about {
 	display: flex;
 	flex-direction: column;
-	align-items: top;
+	align-items: center;
 	justify-content: center;
 	width: fit-content;
 }
@@ -48,7 +63,7 @@ body {
 	list-style: none;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: start;
 	/* align-items: start; */
 	gap: 10px;
 }
@@ -61,12 +76,96 @@ body {
 	cursor: pointer;
 }
 
+.imageGal {
+	display: flex;
+	width: fit-content;
+	background-color: black;
+	transform-origin: top;
+	margin: 0px 40px;
+	padding: 10px 20px;
+	box-shadow: 2px 2px 6px blue;
+	border-radius: 10px;
+	transform: scaleY(1, 1);
+	transition: transform 0.8s;
+}
+.imageGal.transitioning {
+	transition: transform 0.3s;
+	transform: scale(0, 1);
+}
+.imageGal.inactive {
+	opacity: 0;
+	transform: scale(0.01, 1);
+	position: absolute;
+}
+.imageGal > img {
+	width: clamp(340px, 40%, 600px);
+	height: auto;
+	max-height: 340px;
+	border-radius: 0px 30px 30px 0px;
+	box-shadow: 2px 0px 5px violet;
+}
+.imageGal > div {
+	min-width: 340px;
+}
+
+.aboutContent {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 5px;
+}
+.aboutContent > h1 {
+	text-shadow: 5px 5px 10px red, -5px -5px 10px red;
+	font-size: 40px;
+}
+.aboutContent > div {
+	text-shadow: 5px 5px 10px violet;
+	font-size: calc(1.5vw + 10px);
+}
+
+@media /* (min-width: 760px) and */(max-width: 900px) {
+	.imageGal {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+@media (max-width: 760px) {
+	.about > h2 {
+		text-align: center;
+		font-size: calc(6vw + 5px);
+		max-width: 360px;
+		margin: 20px 0px;
+	}
+	.imageGal {
+		margin: 0px;
+		padding: 20px 0px;
+		min-width: 360px;
+		width: 100%;
+	}
+	.imageGal > img {
+		border-radius: 0px 0px 30px 30px;
+		box-shadow: 0px 2px 5px violet;
+	}
+	.contentBody > div {
+		width: 100vw !important;
+		padding: 0px;
+		margin: 0px;
+	}
+	.aboutContent > div {
+		font-size: 24px;
+	}
+}
+
 /* Menu Styling */
+.menu {
+	padding: 30px 40px !important;
+	width: calc(100% - 80px) !important;
+}
 .menu > div {
 	width: 100%;
-	padding: 40px;
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(350px, 450px));
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 	gap: 30px;
 	justify-content: center;
 }
@@ -143,6 +242,7 @@ header > div > img {
 	align-items: center;
 	gap: 5px;
 	font-size: 35px;
+	font-family: "Lobster", sans-serif;
 	padding: 0px 10px;
 }
 #buttons li {
@@ -157,8 +257,18 @@ header > div > img {
 	height: 60px;
 	cursor: default;
 	border-radius: 0px 0px 20px 20px;
+	text-shadow: 4px 4px black;
+	box-shadow: none;
+	transition: background-color 10s, box-shadow 1s;
+}
+#buttons li:hover {
+	transition: background-color 1s;
+	text-shadow: 4px 4px violet;
+	background-color: #241571;
 }
 ul li:hover {
 	z-index: 1;
-	box-shadow: 0px 0px 10px 10px cyan;
+	box-shadow: 0px 0px 10px 10px cyan !important;
+	background-color: violet;
+	transition: background-color 2s;
 }
