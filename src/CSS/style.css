@@ -292,8 +292,9 @@ footer {
 	height: 80px;
 	gap: 20px;
 }
-.footer p {
-	font-size: 24px;
+footer div {
+	font-size: 2rem;
+	max-height: 80px;
 }
 header > div > img {
 	pointer-events: none;
